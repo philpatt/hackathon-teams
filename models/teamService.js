@@ -31,7 +31,6 @@ function deleteTeam(teamName) {
 
 function editTeam(teamName, teamData) {
   var teams = allTeams();
-
   for (var i = 0; i < teams.length; i++) {
     if (teams[i].name === teamName) {
       teams[i] = teamData;

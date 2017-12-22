@@ -10,13 +10,21 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   teamService.addTeam(req.body);
-
   res.redirect('/teams');
 });
+
+
+router.delete('/:name', function(req, res) {
+  teamService.deleteTeam(req.params.name);
+  res.send({message: 'success'});
+});
+
 
 router.get('/new', function(req, res) {
   res.render('teams/new');
 });
+
+
 
 router.get('/:name', function(req, res) {
   // search for the team name in all the teams.
